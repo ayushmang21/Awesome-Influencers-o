@@ -1,10 +1,19 @@
+'use client';
 import React from 'react'
+import Footer from '@/app/(main)/Footer';
+import Navbar from '@/app/(main)/Navbar';
 
 const manageCampaign = () => {
   return (
-    <div>
-        
-    </div>
+    <>
+      <Navbar />
+
+      <div>
+            
+      </div>
+
+      <Footer />
+    </>
   )
 }
 
