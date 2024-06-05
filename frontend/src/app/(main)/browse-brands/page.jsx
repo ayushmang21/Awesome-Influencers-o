@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-
 const browseBrand = () => {
 
   const [brands, setBrands] = useState([]);
@@ -24,7 +23,7 @@ const browseBrand = () => {
   const displayBrandCards = () => {
     return brands.map((brand) => {
       return (
-        <div key={brand._id} className='min-h-52'>
+        <div key={brand._id} className=''>
           <Link
             className="group flex flex-col bg-white border-2 shadow-md shadow-gray-900 rounded-xl hover:shadow-lg hover:shadow-gray-600 transition dark:bg-slate-100 dark:border-gray-900"
             href={`/view-brand/${brand._id}`}
