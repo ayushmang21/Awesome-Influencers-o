@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/navigation';
@@ -10,6 +10,8 @@ const signupSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(16, 'Too Long!')
     .matches(/^[a-zA-Z]+$/, 'Only Alphabets are Allowed')
+    .required('Required'),
+  pfp: Yup.string()
     .required('Required'),
   lastName: Yup.string()
     .min(2, 'Too Short!')
@@ -37,6 +39,29 @@ const signupSchema = Yup.object().shape({
 
 const Signup = () => {
 
+  const [Upfp, setuPfp] = useState('');
+
+  const handlePfp = async (e) => {
+    const file = e.target.files[0];
+    setuPfp(file);
+    const fd = new FormData();
+    fd.append('myfile', file);
+    fetch('http://localhost:5000/util/uploadfile', {
+      method: 'POST',
+      body: fd,
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          console.log('Profile Pic Uploaded Successfully');
+          signupForm.setFieldValue('pfp', file.name);
+          enqueueSnackbar('Profile Pic Uploaded Successfully', { variant: 'success' });
+        } else {
+          console.log('Profile Pic Upload Failed');
+          enqueueSnackbar('Profile Pic Upload Failed', { variant: 'error' });
+        }
+      });
+  }
+
   const router = useRouter();
 
   const signupForm = useFormik({
@@ -46,9 +71,11 @@ const Signup = () => {
       phone: '',
       email: '',
       password: '',
-      confirm: ''
+      confirm: '',
+      pfp: ''
     },
     onSubmit: async (values, { resetForm }) => {
+      values.pfp = Upfp.name;
       console.log(values);
 
       //send req to backend/Rest API
@@ -64,11 +91,11 @@ const Signup = () => {
       console.log(response.statusText);
 
       if (response.status === 200) {
-        enqueueSnackbar('User Added Successfully', { variant: 'success' });
-        router.push("/login");
+        enqueueSnackbar('User Sign Up Successfully', { variant: 'success' });
         resetForm();
+        router.push("/login");
       } else {
-        enqueueSnackbar('User Not Added', { variant: 'error' });
+        enqueueSnackbar('User Sign Up Failed', { variant: 'error' });
       }
     },
     validationSchema: signupSchema
@@ -95,8 +122,24 @@ const Signup = () => {
                 begin setting up your profile.
               </p>
 
-              <form  onSubmit={signupForm.handleSubmit}>
-                <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
+              <form onSubmit={signupForm.handleSubmit}>
+
+                <div className='flex flex-col justify-center mb-6 items-center mt-4'>
+                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                    Profile Picture
+                  </label>
+                  <span className='text-red-500'>{signupForm.touched.firstName && signupForm.errors.firstName}</span>
+                  <input
+                    id='pfp'
+                    type="file"
+                    placeholder="Image Here"
+                    accept='image/jpeg, image/png'
+                    className="block size-40 rounded-full px-5 py-3 pt-14 text-wrap mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 dark:placeholder-gray-400 dark:bg-gray-100 dark:text-gray-700 dark:border-gray-700 focus:border-blue-400 dark:focus:border-white focus:ring-white focus:outline-none focus:ring focus:ring-opacity-40"
+                    onChange={handlePfp}
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div>
                     <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
                       First Name

@@ -14,13 +14,13 @@ const brandSignUpSchema = Yup.object().shape({
         .required('Required'),
     tagline: Yup.string()
         .min(2, 'Too Short!')
-        .max(50, 'Too Long!')
+        .max(70, 'Too Long!')
         .required('Required'),
     logo: Yup.string()
         .required('Required'),
     description: Yup.string()
         .min(2, 'Too Short!')
-        .max(500, 'Too Long!')
+        .max(600, 'Too Long!')
         .required('Required'),
     email: Yup.string()
         .email('Invalid email')
@@ -91,11 +91,11 @@ const brandSignUp = () => {
             console.log(response.statusText);
 
             if (response.status === 200) {
-                enqueueSnackbar('Sign Up Successful', { variant: 'success' });
+                enqueueSnackbar('Brand Sign Up Successful', { variant: 'success' });
                 resetForm();
                 router.push("/brandLogin")
             } else {
-                enqueueSnackbar('Sign Up Failed', { variant: 'error' });
+                enqueueSnackbar('Brand Sign Up Failed', { variant: 'error' });
             }
         },
         validationSchema: brandSignUpSchema
@@ -151,7 +151,6 @@ const brandSignUp = () => {
                                         accept='image/jpeg, image/png'
                                         className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-400 dark:bg-gray-100 dark:text-gray-700 dark:border-gray-700 focus:border-blue-400 dark:focus:border-white focus:ring-white focus:outline-none focus:ring focus:ring-opacity-40"
                                         onChange={uploadLogo}
-                                        
                                     />
                                 </div>
                                 <div className="mb-4">

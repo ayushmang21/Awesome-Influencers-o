@@ -55,7 +55,7 @@ const browseCampaign = () => {
                 {camp.name}
               </p>
             </h2>
-            <p className="text-gray-500 overflow-y-auto h-24 pr-2 my-1">
+            <p className="text-gray-500 overflow-y-auto h-24 pr-2 my-1 scrollbar scrollbar-track-transparent scrollbar-thumb-gray-400">
               {camp.description}
             </p>
             <div>

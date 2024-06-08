@@ -36,7 +36,7 @@ const viewInfluencer = () => {
                 </h1>
                 <div className="mt-10 lg:mt-20 lg:flex lg:items-center">
                   <img
-                    className="object-contain object-center w-full lg:w-[32rem] rounded-lg h-96"
+                    className="object-contain object-center lg:w-[32rem] rounded-full h-96"
                     src={"http://localhost:5000/" + influencer.pfp}
                     alt=""
                   />
