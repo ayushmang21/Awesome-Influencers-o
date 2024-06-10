@@ -1,11 +1,12 @@
 import React from 'react'
-import { BellIcon, ChevronDownIcon, MenuIcon, SearchIcon, UserCircle } from 'lucide-react';
+import {ChevronDownIcon, MenuIcon} from 'lucide-react';
 import Link from 'next/link';
 
 const Navbar = () => {
   return (
     <>
       <div className="navbar bg-white">
+
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -60,7 +61,7 @@ const Navbar = () => {
             {/* Campaigns */}
             <li>
               <div className="dropdown dropdown-hover dropdown-bottom dropdown-end">
-                <summary className='inline-flex  items-center'>Campaigns <ChevronDownIcon size={20} /> </summary>
+                <summary className='inline-flex items-center'>Campaigns <ChevronDownIcon size={20} /> </summary>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-white rounded-box w-32">
                   <li><Link href="/brand/create-campaign">Create</Link></li>
                   <li><Link href="/brand/manage-campaign">Manage</Link></li>
@@ -88,11 +89,12 @@ const Navbar = () => {
               <Link href="/brandLogin" className='btn btn-ghost text-base px-2'>Brand</Link>
             </div>
             <div className="divider divider-horizontal divider-neutral mx-0 py-2"></div>
-            <div className="">
+            <div className="text-base font-semibold">
               <Link href="/login" className='btn btn-ghost text-base px-2'>Influencer</Link>
             </div>
           </div>
         </div>
+
       </div>
     </>
   )
