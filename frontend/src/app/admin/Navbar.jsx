@@ -6,6 +6,10 @@ const AdminNavbar = () => {
     <>
       <div className='navbar bg-white'>
 
+        <div>
+          <Link href="/" className="btn btn-ghost italic text-xl">Awesome Influencers</Link>
+        </div>
+
         <div className='navbar-center hidden lg:flex'>
           <ul className="menu menu-horizontal px-1 text-base font-semibold">
 
