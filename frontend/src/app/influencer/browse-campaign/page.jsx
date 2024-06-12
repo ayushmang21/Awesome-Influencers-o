@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import Footer from '@/app/(main)/Footer';
 import Navbar from '@/app/(main)/Navbar';
 import Link from 'next/link';
-// import { useParams } from 'next/navigation';
 
 const browseCampaign = () => {
 
