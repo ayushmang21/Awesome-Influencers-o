@@ -53,11 +53,11 @@ const campaignDetails = () => {
                     {campDetail.name}
                   </h1>
 
-                  <h1 className="text-2xl font-semibold text-gray-800 dark:text-white p-3 mt-6">
+                  <h1 className="text-2xl font-semibold text-gray-800 text-center dark:text-white p-3 mt-6">
                     {campDetail.brand}
                   </h1>
 
-                  <p className="max-w-lg mt-6 text-gray-500 dark:text-gray-400 p-3">
+                  <p className="max-w-lg mx-auto mt-6 text-gray-500 text-center dark:text-gray-400 p-3">
                     {campDetail.description}
                   </p>
 
@@ -66,7 +66,7 @@ const campaignDetails = () => {
                   </h3>
 
                   <h3 className="mt-6 text-lg font-medium dark:text-gray-300 px-3">
-                    Last Date - {campDetail.lastDate}
+                    {/* Last Date - {campDetail.lastDate} */}
                   </h3>
 
                 </div>

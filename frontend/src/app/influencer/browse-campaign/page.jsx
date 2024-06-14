@@ -27,7 +27,7 @@ const browseCampaign = () => {
       return (
         <div key={camp._id} className="flex flex-col items-center overflow-hidden rounded-lg border md:flex-row">
           <Link
-            href="#"
+            href={`/influencer/campaign-details/${camp._id}`}
             className="group select-none relative block h-48 w-full shrink-0 self-start overflow-hidden bg-gray-100 md:h-full md:w-32 lg:w-48"
           >
             <img
@@ -39,12 +39,9 @@ const browseCampaign = () => {
           </Link>
           <div className="flex flex-col gap-2 p-4 lg:p-6">
             <h2 className="text-2xl font-bold text-gray-800">
-              <Link
-                href={`/view-brand/${camp._id}`}
-                className="transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-              >
+              <h1 className="transition duration-100 hover:text-indigo-500 active:text-indigo-600">
                 {camp.brand}
-              </Link>
+              </h1>
             </h2>
             <h2 className="text-lg font-semibold text-gray-800">
               <p
@@ -82,11 +79,11 @@ const browseCampaign = () => {
             <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
               Campaigns
             </h2>
-            <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+            {/* <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
               This is a section of some simple filler text, also known as placeholder
               text. It shares some characteristics of a real written text but is
               random or otherwise generated.
-            </p>
+            </p> */}
           </div>
           {/* text - end */}
           <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-8">

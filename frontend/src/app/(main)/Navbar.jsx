@@ -42,7 +42,7 @@ const Navbar = () => {
               <div className="dropdown dropdown-hover dropdown-bottom dropdown-end">
                 <summary className='inline-flex items-center'>Influencers <ChevronDownIcon size={20} /> </summary>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-white rounded-box w-32">
-                  <li><Link href="influencer/browse-campaign">Browse Campaigns</Link></li>
+                  <li><Link href="/influencer/browse-campaign">Browse Campaigns</Link></li>
                 </ul>
               </div>
             </li>
@@ -65,6 +65,7 @@ const Navbar = () => {
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-white rounded-box w-32">
                   <li><Link href="/brand/create-campaign">Create</Link></li>
                   <li><Link href="/brand/manage-campaign">Manage</Link></li>
+                  <li><Link href="/influencer/browse-campaign">Browse</Link></li>
                 </ul>
               </div>
             </li>
