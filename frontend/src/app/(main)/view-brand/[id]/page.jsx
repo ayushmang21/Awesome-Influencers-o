@@ -24,45 +24,47 @@ const viewBrand = () => {
 
     return (
         <>
-            <section className="bg-white dark:bg-gray-900">
-                {
-                    brand !== null ? (
-                        <div className="relative flex">
-                            <div className="min-h-screen lg:w-1/3" />
-                            <div className="hidden w-3/4 min-h-screen bg-gray-100 dark:bg-gray-800 lg:block" />
-                            <div className="container flex flex-col justify-center w-full min-h-screen px-6 py-10 mx-auto lg:absolute lg:inset-x-0">
-                                <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
-                                    {brand.brandName}
-                                </h1>
-                                <div className="mt-10 lg:mt-20 lg:flex lg:items-center">
-                                    <img
-                                        className="object-contain object-center w-full lg:w-[32rem] rounded-lg h-96"
-                                        src={"http://localhost:5000/" + brand.logo}
-                                        alt=""
-                                    />
-                                    <div className="mt-8 lg:px-10 lg:mt-0">
-                                        <h1 className="text-2xl font-semibold dark:text-white lg:w-72">
-                                            {brand.tagline}
-                                        </h1>
-                                        <p className="max-w-lg mt-6 dark:text-white">
-                                            {brand.description}
-                                        </p>
-                                        <h3 className="mt-6 text-lg font-medium text-blue-500">
-                                            Our Email - {brand.email}
-                                        </h3>
-                                    </div>
+            <section className="" style={{
+                background: "linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 120%) #989898",
+                backgroundBlendMode: "multiply,multiply",
+ }}>
+            {
+                brand !== null ? (
+                    <div className="relative flex">
+                        <div className="hidden min-h-screen lg:block" />
+                        <div className="container flex flex-col justify-center w-full min-h-screen px-6 py-10 mx-auto lg:absolute lg:inset-x-0">
+                            <h1 className="text-2xl text-center font-semibold capitalize lg:text-3xl dark:text-white">
+                                {brand.brandName}
+                            </h1>
+                            <div className="mt-10 lg:mt-20 lg:flex lg:items-center">
+                                <img
+                                    className="object-contain object-center w-full lg:w-[32rem] rounded-lg h-96"
+                                    src={"http://localhost:5000/" + brand.logo}
+                                    alt=""
+                                />
+                                <div className="mt-8 lg:px-10 lg:mt-0">
+                                    <h1 className="text-2xl font-semibold dark:text-white lg:w-72">
+                                        {brand.tagline}
+                                    </h1>
+                                    <p className="max-w-lg mt-6 dark:text-white">
+                                        {brand.description}
+                                    </p>
+                                    <h3 className="mt-6 text-lg font-medium text-white hover:underline hover:decoration-black hover:decoration-2 hover:underline-offset-4">
+                                        Our Email - {brand.email}
+                                    </h3>
                                 </div>
                             </div>
                         </div>
-                    ) : (
-                        <div className="container flex flex-col justify-center w-full min-h-screen px-6 py-10 mx-auto lg:absolute lg:inset-x-0">
-                            <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
-                                Brand Not Found
-                            </h1>
-                        </div>
-                    )
-                }
-            </section>
+                    </div>
+                ) : (
+                    <div className="container flex flex-col justify-center w-full min-h-screen px-6 py-10 mx-auto lg:absolute lg:inset-x-0">
+                        <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
+                            Brand Not Found
+                        </h1>
+                    </div>
+                )
+            }
+        </section >
         </>
     )
 }

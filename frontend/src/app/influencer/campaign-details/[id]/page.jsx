@@ -28,7 +28,11 @@ const campaignDetails = () => {
     <>
       <Navbar />
 
-      <div className='bg-zinc-800'>
+      <div className='' style={{
+        backgroundSize: "100% 100%",
+        backgroundPosition: "0px 0px,0px 0px,0px 0px,0px 0px,0px 0px",
+        backgroundImage: "repeating-linear-gradient(315deg, #FFFFFF2E 92%, #073AFF00 98%),radial-gradient(99% 99% at 109% 2%, #000000FF 0%, #073AFF00 5%),radial-gradient(160% 154% at 711px -303px, #050000FF 34%, #000000FF 100%)",
+      }}>
         {
           campDetail !== null ? (
             <div className="container flex justify-center w-full min-h-screen px-6 py-10 mx-auto">
@@ -58,7 +62,7 @@ const campaignDetails = () => {
                   </p>
 
                   <h3 className="mt-6 text-lg font-medium dark:text-gray-300 px-3">
-                    Created On - {campDetail.createdOn}
+                    {/* Created On - {campDetail.createdOn} */}
                   </h3>
 
                   <h3 className="mt-6 text-lg font-medium dark:text-gray-300 px-3">
@@ -79,7 +83,7 @@ const campaignDetails = () => {
         }
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
 
     </>
   )
