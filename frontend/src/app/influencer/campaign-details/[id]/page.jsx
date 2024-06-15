@@ -3,6 +3,7 @@ import Footer from '@/app/(main)/Footer';
 import Navbar from '@/app/(main)/Navbar';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 
 const campaignDetails = () => {
 
@@ -40,14 +41,21 @@ const campaignDetails = () => {
               <div className=" flex items-center">
 
                 <div>
-                  <img
+                  <motion.img
+                    initial={{ x: -100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
                     className="object-contain object-center w-[500px] rounded-lg "
                     src={"http://localhost:5000/" + campDetail.image}
                     alt=""
                   />
                 </div>
 
-                <div className="lg:px-10">
+                <motion.div
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  className="lg:px-10">
 
                   <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-5xl dark:text-white text-center py-3">
                     {campDetail.name}
@@ -69,7 +77,7 @@ const campaignDetails = () => {
                     {/* Last Date - {campDetail.lastDate} */}
                   </h3>
 
-                </div>
+                </motion.div>
               </div>
 
             </div>
