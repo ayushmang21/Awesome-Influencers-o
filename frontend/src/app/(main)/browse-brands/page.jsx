@@ -71,7 +71,7 @@ const browseBrand = () => {
       <>
         {/* Card Section */}
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-          <div className='mb-10'>
+          <div className='mb-100'>
             <h1 className='mb-10 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl'>
               Brands
             </h1>
