@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const url = "mongodb+srv://ayushman0021:wW4yEHTwB4Pbmriv@cluster0.2fykihf.mongodb.net/awesome-influencers?retryWrites=true&w=majority"
+const url = process.env.MONGODB_URI;
 
 mongoose.connect(url)
 .then((result) => {
